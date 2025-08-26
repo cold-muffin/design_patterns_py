@@ -32,10 +32,13 @@ class ServiceLite(Service):
 
 # Abstract factory
 class ProductFactory(ABC):
-    @staticmethod
     @abstractmethod
-    def create_product(version:str, **kwargs):
+    def create_product(self, version:str, **kwargs):
         "Creates a product's version"
+    
+    @abstractmethod
+    def create_service(self, version:str, **kwargs):
+        "Creates a service's version"
 
 # Factories
 class StandardFactory(ProductFactory):
